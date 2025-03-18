@@ -1,12 +1,11 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { PaymentRepository } from './payment.repository';
 import { PaymentCreateDto } from './dto/payment-create.dto';
-import { MapperUtil } from 'src/util/mapper-util';
+import { MapperUtil } from '../../util/mapper-util';
 import { Payment } from './entities/payment.entity';
-import { ExternalPaymentProviderService } from 'src/resource/ExternalPaymentProvider/externalPaymentProvider-resource.service';
+import { ExternalPaymentProviderService } from '../../resource/ExternalPaymentProvider/externalPaymentProvider-resource.service';
 import { PaymentStatusDto } from './dto/payment-status.dto';
 import { Status } from './enum/payment-enum';
-import { error } from 'console';
 
 @Injectable()
 export class PaymentService {

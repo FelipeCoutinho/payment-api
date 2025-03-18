@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { ExternalPaymentStatusDto } from 'src/app/payment/dto/external-payment-status.dto';
-import { Status } from 'src/app/payment/enum/payment-enum';
+import { ExternalPaymentStatusDto } from '../../app/payment/dto/external-payment-status.dto';
+import { Status } from '../../app/payment/enum/payment-enum';
 
 @Injectable()
 export class ExternalPaymentProviderService {
