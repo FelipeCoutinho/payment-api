@@ -1,6 +1,6 @@
 # Giro Chile - Organization Application
 
-The project is responsible for capturing and storing all data relating to organizations and users, also taking care of the consistency of user data stored in KeyCloak (System for authentication and authorization with SSO - Single Sign-On) resource.
+The project is responsible for capturing and storing all data relating to payment and users, also taking care of the consistency of user data stored in KeyCloak (System for authentication and authorization with SSO - Single Sign-On) resource.
 
 The application has public resources for requesting new access, where new companies can register by sending their data and documents for analysis.
 
@@ -12,7 +12,7 @@ Profiles that have permission to access protected resources:
   * _ADMIN_DOMICILIARY:_ Domiciliary administrator 
   * _ADMIN_NON_DOMICILIARY:_ Non domiciliary administrator
 * Clientes:
-  * _MANAGER:_ Entity management users
+  * _payment:_ Entity management users
   * _PRODUCER:_ Users of producing entity
   * _INDUSTRIAL_CONSUMER:_ Industrial consumer entity users
   * _CITY:_ City users
@@ -25,13 +25,13 @@ Profiles that have permission to access protected resources:
 
 ```bash
 # Clone this repository
-$ git clone <https://bitbucket.org/redeciclo/giro-organizations>
+$ git clone <https://bitbucket.org/redeciclo/giro-payment>
 
 # Duplicate .exemple.env and set required ENVs (below are all existing ENVs)
 $ cp .exemple.env .env
 
 # Access the project folder in the terminal/cmd
-$ cd giro-organizations
+$ cd giro-payment
 
 # Install dependencies
 $ npm install
@@ -63,7 +63,7 @@ $ npm run test:cov
 |-------------------------------------------|---------------------------------------------------|------------------------------------------|
 | GLOBAL_PREFIX                             | ""                                                | ""                                       |
 | PORT                                      | 3000                                              | 3000                                     |
-| CONTEXT_PATH                              | /giro-organizations                               | /giro-organizations                      |
+| CONTEXT_PATH                              | /giro-payment                               | /giro-payment                      |
 | **Database**                              |                                                   |                                          |
 | DATABASE_URL                              | postgresql://user:pass@host:port/db?schema=public |                                          |
 | DATABASE_LOGGING                          | true/false                                        | false                                    |
@@ -80,7 +80,7 @@ $ npm run test:cov
 | KEYCLOAK_TOKEN_VALIDATION                 | ONLINE                                            | ONLINE                                   |
 | KEYCLOAK_EMAIL_LIFESPAN                   | 3600                                              | 3600                                     |
 | **Keycloak - ROLE NAMES**                 |                                                   |                                          |
-| KEYCLOAK_MANAGER_ROLE_NAME                | giro-manager                                      | giro-manager                             |
+| KEYCLOAK_payment_ROLE_NAME                | giro-payment                                      | giro-payment                             |
 | KEYCLOAK_PRODUCER_ROLE_NAME               | giro-producer                                     | giro-producer                            |
 | KEYCLOAK_INDUSTRIAL_CONSUMER_ROLE_NAME    | giro-industrial-consumer                          | giro-industrial-consumer                 |
 | KEYCLOAK_CITY_ROLE_NAME                   | giro-city                                         | giro-city                                |
@@ -90,6 +90,6 @@ $ npm run test:cov
 | **Asynchonous Jobs**                      |                                                   |                                          |
 | **AMQP**                                  |                                                   |                                          |
 | AMQP_URI                                  | amqp://guest:guest@localhost:5672                 |                                          |
-| ORGANIZATION_UPDATED_EXCHANGE_NAME        | giro-organizations.organizations.updated          | giro-organizations.organizations.updated |
+| ORGANIZATION_UPDATED_EXCHANGE_NAME        | giro-payment.payment.updated          | giro-payment.payment.updated |
 | ORGANIZATION_UPDATED_EXCHANGE_TYPE        | fanout                                            | fanout                                   |
-| ORGANIZATION_UPDATED_EXCHANGE_ROUTING_KEY | organizations.updated                             | organizations.updated                    |# Organization
+| ORGANIZATION_UPDATED_EXCHANGE_ROUTING_KEY | payment.updated                             | payment.updated                    |# Organization
