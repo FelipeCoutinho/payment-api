@@ -6,6 +6,10 @@ import { Expose } from 'class-transformer';
 @Entity('payments')
 export class Payment extends AbstractEntity {
   @Expose()
+  @Column({ name: 'id', nullable: false })
+  id: string;
+
+  @Expose()
   @Column({ name: 'amount', nullable: false })
   amount: number;
 
