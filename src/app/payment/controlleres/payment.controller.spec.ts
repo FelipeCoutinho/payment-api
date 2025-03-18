@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PaymentController } from './payment.controller';
-import { PaymentService } from './payment.service';
-import { PaymentCreateDto } from './dto/payment-create.dto';
+import { PaymentService } from '../services/payment.service';
+import { PaymentCreateDto } from '../dto/payment-create.dto';
 import * as request from 'supertest';
 import { INestApplication, NotFoundException } from '@nestjs/common';
 
@@ -35,8 +35,6 @@ describe('PaymentController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
-
-    // Middleware para validar API Key nos testes
     app.use((req, res, next) => {
       if (req.headers['x-api-key'] !== API_KEY) {
         return res.status(401).json({ message: 'Unauthorized' });

@@ -41,14 +41,4 @@ export default () => ({
     clientId: process.env.KEYCLOAK_CLIENT_ID || '',
     clientSecret: process.env.KEYCLOAK_CLIENT_SECRET || '',
   },
-  amqp: {
-    uri: process.env.AMQP_URI,
-    payment: {
-      updated: {
-        exchangeName: process.env.ORGANIZATION_UPDATED_EXCHANGE_NAME,
-        exchangeType: process.env.ORGANIZATION_UPDATED_EXCHANGE_TYPE || 'fanout',
-        routingKey: process.env.ORGANIZATION_UPDATED_EXCHANGE_ROUTING_KEY,
-      },
-    },
-  },
 });

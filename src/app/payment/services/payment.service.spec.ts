@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PaymentService } from './payment.service';
-import { PaymentRepository } from './payment.repository';
-import { ExternalPaymentProviderService } from '../../resource/ExternalPaymentProvider/externalPaymentProvider-resource.service';
-import { PaymentCreateDto } from './dto/payment-create.dto';
-import { Payment } from './entities/payment.entity';
-import { NotFoundException, BadRequestException } from '@nestjs/common';
-import { PaymentStatusDto } from './dto/payment-status.dto';
-import { PaymentMethod, Status } from './enum/payment-enum';
+import { PaymentService } from '../services/payment.service';
+import { PaymentRepository } from '../repository/payment.repository';
+import { ExternalPaymentProviderService } from '../../../resource/ExternalPaymentProvider/externalPaymentProvider-resource.service';
+import { PaymentCreateDto } from '../dto/payment-create.dto';
+import { Payment } from '../entities/payment.entity';
+import { PaymentStatusDto } from '../dto/payment-status.dto';
+import { PaymentMethod, Status } from '../enum/payment-enum';
+import { BadRequestException, NotFoundException } from '@nestjs/common';
 
 describe('PaymentService', () => {
   let paymentService: PaymentService;

@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { Payment } from './entities/payment.entity';
+import { Payment } from '../entities/payment.entity';
 import { IPaginationOptions } from 'nestjs-typeorm-paginate';
-import { DynamicSort } from '../orm/sort/dynamic-sort';
+import { DynamicSort } from '../../orm/sort/dynamic-sort';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { AbstractRepository } from '../orm/abstract.repository';
+import { AbstractRepository } from '../../orm/abstract.repository';
 
 @Injectable()
 export class PaymentRepository extends AbstractRepository<Payment> {
