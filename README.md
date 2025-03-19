@@ -57,13 +57,11 @@ Instale as dependências
 Rode as migrations
 sh
 ```
-Editar
 npm run migration:run
 ```
 Inicie a API
 sh
 ```
-Copiar
 npm run start:dev
 ```
 📌 Testes
@@ -76,8 +74,11 @@ http://localhost:3000/api/docs
 
 Endpoints principais
 POST /payments - Criar um pagamento
+
 GET /payments - Listar todos os pagamentos
+
 GET /payments/:id - Buscar pagamento por ID
+
 PUT /payments/:id/status - Atualizar status do pagamento
 
 📌 Estrutura de Pastas
