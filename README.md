@@ -1,5 +1,5 @@
 
-# 🚀 Payment API
+# Payment API
 
 Este projeto é uma **API RESTful** desenvolvida com **NestJS** para gerenciamento de pagamentos, utilizando **arquitetura hexagonal** e um conjunto robusto de tecnologias modernas para garantir escalabilidade, testabilidade e manutenção.
 
@@ -52,93 +52,36 @@ Antes de iniciar, certifique-se de ter instalado:
    cd payment-api
 Instale as dependências
 
-sh
-Copiar
-Editar
-npm install
-Copie o arquivo .env de exemplo e configure suas variáveis
 
-sh
-Copiar
-Editar
-cp .exemple.env .env
-📌 Execução com Docker
-Dê permissão de execução ao script
-
-sh
-Copiar
-Editar
-chmod +x run-docker.sh
-Execute o script para subir os containers
-
-sh
-Copiar
-Editar
-./run-docker.sh
-Verifique os containers rodando
-
-sh
-Copiar
-Editar
-docker ps
-📌 Execução Manual (Sem Docker)
-Caso prefira rodar localmente sem containers:
-
-Suba um banco PostgreSQL localmente
-
-sh
-Copiar
-Editar
-docker run --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
-Atualize o .env com as credenciais do banco local.
 
 Rode as migrations
-
 sh
-Copiar
+```
 Editar
 npm run migration:run
+```
 Inicie a API
-
 sh
+```
 Copiar
-Editar
 npm run start:dev
+```
 📌 Testes
 O projeto inclui testes unitários e de integração usando Jest, Supertest e TestContainers.
 
-1️⃣ Rodar testes unitários
-sh
-Copiar
-Editar
-npm run test
-2️⃣ Rodar testes de integração
-sh
-Copiar
-Editar
-npm run test:e2e
-3️⃣ Gerar relatório de cobertura
-sh
-Copiar
-Editar
-npm run test:cov
-📌 Endpoints e Documentação
-A API é documentada automaticamente com Swagger.
-
 Após iniciar a API, acesse:
-
-bash
-Copiar
-Editar
+```
 http://localhost:3000/api/docs
-Endpoints principais
+```
 
+Endpoints principais
 POST /payments - Criar um pagamento
 GET /payments - Listar todos os pagamentos
 GET /payments/:id - Buscar pagamento por ID
 PUT /payments/:id/status - Atualizar status do pagamento
-📌 Estrutura de Pastas
 
+📌 Estrutura de Pastas
+```
 ├── .eslintrc.js
 ├── .exemple.env
 ├── .gitignore
