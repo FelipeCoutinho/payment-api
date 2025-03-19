@@ -1,5 +1,5 @@
 import { PostgreSqlContainer, StartedPostgreSqlContainer } from '@testcontainers/postgresql';
-import { Payment } from 'src/app/payment/entities/payment.entity';
+import { Payment } from '../../app/payment/entities/payment.entity';
 import { DataSource } from 'typeorm';
 
 export class TestDatabase {
@@ -33,6 +33,7 @@ export class TestDatabase {
       database: 'testdb',
       entities: [Payment],
       synchronize: true,
+      logging: true,
     });
 
     await this.dataSource.initialize();

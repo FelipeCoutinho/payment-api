@@ -25,6 +25,6 @@ export class Payment extends AbstractEntity {
   @Column({ name: 'status', nullable: false, default: Status.PENDING, length: 20 })
   status: Status;
   @Expose()
-  @Column({ name: 'product_id', nullable: false, default: Status.PENDING, length: 20 })
-  productId: Status;
+  @Column({ name: 'product_id', nullable: false, default: Status.PENDING })
+  productId: string;
 }
