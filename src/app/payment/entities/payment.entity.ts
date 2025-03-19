@@ -1,6 +1,6 @@
 import { Column, Entity } from 'typeorm';
 import { Status } from '../enum/payment-enum';
-import { AbstractEntity } from '../../orm/abstract-entity';
+import { AbstractEntity } from '../../database/orm/abstract-entity';
 import { Expose } from 'class-transformer';
 
 @Entity('payments')

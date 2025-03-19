@@ -1,6 +1,6 @@
 import { PostgreSqlContainer, StartedPostgreSqlContainer } from '@testcontainers/postgresql';
+import { Payment } from 'src/app/payment/entities/payment.entity';
 import { DataSource } from 'typeorm';
-import { Payment } from '../entities/payment.entity';
 
 export class TestDatabase {
   private static instance: TestDatabase;
@@ -18,14 +18,12 @@ export class TestDatabase {
   }
 
   private async init() {
-    // Criando um container PostgreSQL para testes
     this.container = await new PostgreSqlContainer()
       .withDatabase('testdb')
       .withUsername('testuser')
       .withPassword('testpass')
       .start();
 
-    // Criando conexão com TypeORM
     this.dataSource = new DataSource({
       type: 'postgres',
       host: this.container.getHost(),
@@ -34,7 +32,7 @@ export class TestDatabase {
       password: 'testpass',
       database: 'testdb',
       entities: [Payment],
-      synchronize: true, // Para recriar as tabelas automaticamente nos testes
+      synchronize: true,
     });
 
     await this.dataSource.initialize();
